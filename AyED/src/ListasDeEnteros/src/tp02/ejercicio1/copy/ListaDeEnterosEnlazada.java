@@ -150,4 +150,10 @@ public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	public int tamanio() {
 		return tamanio;
 	}
+
+	public NodoEntero getInicio() {
+		return inicio;
+	}
+	
+	
 }
