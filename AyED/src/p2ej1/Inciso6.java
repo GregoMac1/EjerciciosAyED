@@ -1,4 +1,4 @@
-package p2ej1;
+/*package p2ej1;
 
 import java.util.Scanner;
 
@@ -38,4 +38,4 @@ public class Inciso6 { //no se como resolver ese error
 		
 	}
 
-}
+}*/

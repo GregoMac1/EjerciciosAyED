@@ -208,5 +208,11 @@ public class ListaEnlazadaGenerica<T> extends ListaGenerica<T> {
 		}
 		return nueva;
 	}
+	
+	public void agregarArreglo (T[] arreglo) {
+		for (int i = 0; i < arreglo.length; i++) {
+			this.agregarFinal(arreglo[i]);
+		}
+	}
 
 }
