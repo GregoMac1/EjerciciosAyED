@@ -1,25 +1,28 @@
-/*package p2ej1;
+package p2ej1;
 
 import java.util.Scanner;
 
 import ListasDeEnteros.src.tp02.ejercicio1.copy.ListaDeEnterosEnlazada;
 
-public class Inciso6 { //no se como resolver ese error
+public class Inciso6 { //bien
 	
 	public static ListaDeEnterosEnlazada calcularSucesion(Integer valor) {
-		if (valor == 2) { 
-			ListaDeEnterosEnlazada lista = new ListaDeEnterosEnlazada();
+		ListaDeEnterosEnlazada lista = null;
+		if (valor == 1) { 
+			lista = new ListaDeEnterosEnlazada();
+			lista.agregarInicio(1);
 		}
-		else {			
-			calcularSucesion(valor);
-		}
-		if (valor % 2 == 0) { 
-			valor = valor/2;	
-		}
-		else {
-			valor = (3*valor)+1;
-		}
-		lista.agregarInicio(valor);
+		else {	
+			int valorInicial = valor;
+			if (valor % 2 == 0) { 
+				valor = valor/2;	
+			}
+			else {
+				valor = (3*valor)+1;
+			}
+			lista = calcularSucesion(valor);
+			lista.agregarInicio(valorInicial);
+		}			
 		return lista;
 	}
 
@@ -38,4 +41,4 @@ public class Inciso6 { //no se como resolver ese error
 		
 	}
 
-}*/
+}

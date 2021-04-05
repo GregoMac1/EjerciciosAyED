@@ -1,7 +1,7 @@
 package ListasGenericas.src.tp02.ejercicio2.copy;
 
 public class PilaGenerica<T> {
-	private ListaEnlazadaGenerica<T> pila;
+	private ListaGenerica<T> pila;
 	
 	public PilaGenerica() {
 		pila = new ListaEnlazadaGenerica<T>();
