@@ -7,8 +7,7 @@ import ListasGenericas.src.tp02.ejercicio2.copy.ListaGenerica;
 public class ArbolBinario<T> {
 	private T dato;
 	private ArbolBinario<T> hijoIzquierdo;   
-	private ArbolBinario<T> hijoDerecho; 
-	private int cantHojas = 0;
+	private ArbolBinario<T> hijoDerecho;
 
 	
 	public ArbolBinario() {
@@ -128,35 +127,41 @@ public class ArbolBinario<T> {
 	
 	// imprime el árbol en preorden  
 	public void printPreorden() {
-		System.out.println(this.getDato());
-		if (this.tieneHijoIzquierdo()) {
-			this.getHijoIzquierdo().printPreorden();
-		}
-		if (this.tieneHijoDerecho()) {
-			this.getHijoDerecho().printPreorden();
+		if (this != null && !this.esVacio()) {
+			System.out.println(this.getDato());		
+			if (this.tieneHijoIzquierdo()) {
+				this.getHijoIzquierdo().printPreorden();
+			}
+			if (this.tieneHijoDerecho()) {
+				this.getHijoDerecho().printPreorden();
+			}
 		}
 	}
 	
-	public void printEnOrden() {		
-		if (this.tieneHijoIzquierdo()) {
-			this.getHijoIzquierdo().printEnOrden();
-		}
-		System.out.println(this.getDato());
-		if (this.tieneHijoDerecho()) {
-			this.getHijoDerecho().printEnOrden();
+	public void printEnOrden() {	
+		if (this != null && !this.esVacio()) {
+			if (this.tieneHijoIzquierdo()) {
+				this.getHijoIzquierdo().printEnOrden();
+			}
+			System.out.println(this.getDato());
+			if (this.tieneHijoDerecho()) {
+				this.getHijoDerecho().printEnOrden();
+			}
 		}
 	}
 
 	// imprime el �rbol en postorden
 	public void printPostorden() {		
-		if (this.tieneHijoIzquierdo()) {
-			this.getHijoIzquierdo().printPreorden();
+		if (this != null && !this.esVacio()) {
+			if (this.tieneHijoIzquierdo()) {
+				this.getHijoIzquierdo().printPreorden();
+			}
+			if (this.tieneHijoDerecho()) {
+				this.getHijoDerecho().printPreorden();
+			}
+			System.out.println(this.getDato());
 		}
-		if (this.tieneHijoDerecho()) {
-			this.getHijoDerecho().printPreorden();
-		}
-		System.out.println(this.getDato());
-	}
+	}	
 
 
 	public void recorridoPorNiveles() {
@@ -193,17 +198,20 @@ public class ArbolBinario<T> {
 	
 	
 	
-	public int contarHojas() {
-		if (!this.tieneHijoDerecho() && !this.tieneHijoIzquierdo()) {
-			cantHojas++;
-		}
-		else {
-			if (this.tieneHijoIzquierdo()) {
-				this.getHijoIzquierdo().contarHojas();
+	public int contarHojas() { //bien
+		int cantHojas = 0;
+		if (!this.esVacio()) {			
+			if (!this.tieneHijoDerecho() && !this.tieneHijoIzquierdo()) {
+				cantHojas++;
 			}
-			if (this.tieneHijoDerecho()) {
-				this.getHijoDerecho().contarHojas();
-			}
+			else {
+				if (this.tieneHijoIzquierdo()) {
+					cantHojas += this.getHijoIzquierdo().contarHojas();
+				}
+				if (this.tieneHijoDerecho()) {
+					cantHojas += this.getHijoDerecho().contarHojas();
+				}
+			}			
 		}
 		return cantHojas;
 	}
