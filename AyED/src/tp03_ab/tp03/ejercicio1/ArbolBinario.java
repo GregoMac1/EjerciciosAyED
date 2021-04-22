@@ -215,4 +215,15 @@ public class ArbolBinario<T> {
 		}
 		return cantHojas;
 	}
+	
+	public ArbolBinario<T> espejo(){ //bien
+		ArbolBinario<T> aux = new ArbolBinario<>(this.getDato());			
+		if (this.tieneHijoDerecho()) {
+			aux.agregarHijoIzquierdo(this.getHijoDerecho().espejo());
+		}
+		if (this.tieneHijoIzquierdo()) {
+			aux.agregarHijoDerecho(this.getHijoIzquierdo().espejo());
+		}
+		return aux;
+	}
 }

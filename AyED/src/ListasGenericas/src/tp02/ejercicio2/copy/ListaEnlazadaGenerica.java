@@ -177,11 +177,6 @@ public class ListaEnlazadaGenerica<T> extends ListaGenerica<T> {
 	}
 
 	@Override
-	public int tamanio() {
-		return this.tamanio;
-	}
-
-	@Override
 	public boolean esVacia() {
 		return this.tamanio() == 0;
 	}
@@ -213,6 +208,11 @@ public class ListaEnlazadaGenerica<T> extends ListaGenerica<T> {
 		for (int i = 0; i < arreglo.length; i++) {
 			this.agregarFinal(arreglo[i]);
 		}
+	}
+
+	@Override
+	public int tamanio() {		
+		return this.tamanio;
 	}
 
 }
