@@ -14,16 +14,16 @@ public class ProfundidadArbolBinario {
 		return arbol;
 	}
 	
-	public int sumaElementosProfundidad(int p) { //creo que bien. hay que probarlo
+	public int sumaElementosProfundidad(int p) { //bien
 		int suma = 0;
 		int nivel = 0;
 		ArbolBinario<Integer> aux = null;
 		ColaGenerica<ArbolBinario<Integer>> cola = new ColaGenerica<ArbolBinario<Integer>>();
 		cola.encolar(this.getArbol());
 		cola.encolar(null);
-		while (nivel < p && !cola.esVacia()) {
+		while (nivel <= p && !cola.esVacia()) {
 			aux = cola.desencolar();
-			if (arbol != null) {
+			if (aux != null) {
 				suma = suma + aux.getDato();
 				if (aux.tieneHijoIzquierdo()) {
 					cola.encolar(aux.getHijoIzquierdo());

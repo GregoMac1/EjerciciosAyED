@@ -68,7 +68,6 @@ public class ArbolBinario<T> {
 
 	}
 
-	@Override
 	public String toString() {
 		return this.getDato().toString();
 	}
@@ -225,5 +224,32 @@ public class ArbolBinario<T> {
 			aux.agregarHijoDerecho(this.getHijoIzquierdo().espejo());
 		}
 		return aux;
+	}
+	
+	public void entreNiveles(int inf, int sup) { //bien
+		int nivel = 0;
+		ArbolBinario<T> arbol = null;
+		ColaGenerica<ArbolBinario<T>> cola = new ColaGenerica<ArbolBinario<T>>();
+		cola.encolar(this);
+		cola.encolar(null);
+		while (nivel <= sup && !cola.esVacia()) {
+			arbol = cola.desencolar();
+			if (arbol != null) {
+				if (nivel>=inf) {
+					System.out.println(arbol.getDato());
+				}
+				if (arbol.tieneHijoIzquierdo()) {
+					cola.encolar(arbol.getHijoIzquierdo());
+				}
+				if (arbol.tieneHijoDerecho()) {
+					cola.encolar(arbol.getHijoDerecho());
+				}
+			}
+			else if (!cola.esVacia()) {
+				System.out.println();
+				cola.encolar(null);
+				nivel++;
+			}
+		}
 	}
 }
