@@ -60,68 +60,92 @@ public class ArbolGeneral<T> {
 		return this.dato == null && !this.tieneHijos();
 	}
 
-	public ListaEnlazadaGenerica<T> preOrden(){
-		ListaEnlazadaGenerica<T> lista = new ListaEnlazadaGenerica<>();
-		lista.agregarFinal(this.getDato());
-		ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
-		while (!hijos.fin()) {
-			ArbolGeneral<T> arbol = hijos.proximo();
-			for (int i = 0; i < arbol.preOrden().tamanio(); i++) {
-				lista.agregarFinal(arbol.preOrden().elemento(i));
-			}
-		}
-		return lista;
+	public ListaEnlazadaGenerica<T> preOrden(){ //bien
+		ListaEnlazadaGenerica<T> lista = new ListaEnlazadaGenerica<>();  
+		preOrden(lista); 
+	    return lista;
 	}
 	
-	public ListaEnlazadaGenerica<T> inOrden(){ //no estoy seguro de que este bien
-		ListaEnlazadaGenerica<T> lista = new ListaEnlazadaGenerica<>();		
-		ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
-		ArbolGeneral<T> arbol;
-		if (hijos.elemento(0) != null) {
-			arbol = hijos.elemento(0);
-			for (int i = 0; i < arbol.inOrden().tamanio(); i++) {
-				lista.agregarFinal(arbol.inOrden().elemento(i));
-			}
-		}
-		lista.agregarFinal(this.getDato());
-		while (!hijos.fin()) {
-			arbol = hijos.proximo();
-			for (int i = 0; i < arbol.inOrden().tamanio(); i++) {
-				lista.agregarFinal(arbol.inOrden().elemento(i));
-			}
-		}
-		return lista;
+	private void preOrden(ListaEnlazadaGenerica<T> lista){
+	    ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+	    lista.agregarFinal(this.getDato());
+	    ArbolGeneral<T> arbol;
+	    if (!hijos.esVacia()) {
+	    	arbol = hijos.elemento(0);
+	    	arbol.preOrden(lista);
+	    }	    
+	    hijos.comenzar();
+	    while (!hijos.fin()) {
+	        arbol = hijos.proximo();
+	        arbol.preOrden(lista);
+	    }	    
 	}
 	
-	public ListaEnlazadaGenerica<T> postOrden(){
-		ListaEnlazadaGenerica<T> lista = new ListaEnlazadaGenerica<>();
-		ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
-		while (!hijos.fin()) {
-			ArbolGeneral<T> arbol = hijos.proximo();
-			for (int i = 0; i < arbol.postOrden().tamanio(); i++) {
-				lista.agregarFinal(arbol.postOrden().elemento(i));
-			}
-		}
-		lista.agregarFinal(this.getDato());
-		return lista;
+	public ListaEnlazadaGenerica<T> inOrden(){ //bien
+		ListaEnlazadaGenerica<T> lista = new ListaEnlazadaGenerica<>();  
+		inOrdenRecorrido(lista); 
+	    return lista;
 	}
 	
-	public ListaEnlazadaGenerica<T> porNiveles(){ //hay que ver si esta bien
+	private void inOrdenRecorrido(ListaEnlazadaGenerica<T> lista){
+	    ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+	    ArbolGeneral<T> arbol;
+	    if (!hijos.esVacia()) {
+	    	arbol = hijos.elemento(0);
+	    	arbol.inOrdenRecorrido(lista);
+	    }
+	    lista.agregarFinal(this.getDato());
+	    hijos.comenzar();
+	    while (!hijos.fin()) {
+	        arbol = hijos.proximo();
+	        arbol.inOrdenRecorrido(lista);
+	    }
+	}
+		
+	public ListaEnlazadaGenerica<T> postOrden(){ //bien
+		ListaEnlazadaGenerica<T> lista = new ListaEnlazadaGenerica<>();  
+		postOrdenRecorrido(lista); 
+	    return lista;
+	}
+	
+	private void postOrdenRecorrido(ListaEnlazadaGenerica<T> lista){
+	    ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+	    ArbolGeneral<T> arbol;
+	    if (!hijos.esVacia()) {
+	    	arbol = hijos.elemento(0);
+	    	arbol.postOrdenRecorrido(lista);
+	    }	    
+	    hijos.comenzar();
+	    while (!hijos.fin()) {
+	        arbol = hijos.proximo();
+	        arbol.postOrdenRecorrido(lista);
+	    }
+	    lista.agregarFinal(this.getDato());
+	}
+	
+	@SuppressWarnings("unused")
+	public ListaEnlazadaGenerica<T> porNiveles(){ //bien
 		ListaEnlazadaGenerica<T> lista = new ListaEnlazadaGenerica<>();
-		ArbolGeneral<T> arbol = null;
-		ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica<>();
-		cola.encolar(this);
-		cola.encolar(null);
-		while (!cola.esVacia()) {
-			arbol = cola.desencolar();
-			lista.agregarFinal(arbol.getDato());
-			if (arbol != null) {				
-				ListaGenerica<ArbolGeneral<T>> hijos = arbol.getHijos();
-				for (int i = 0; i < hijos.tamanio(); i++) {
-					cola.encolar(hijos.elemento(i));
+		if (!this.esVacio()) {
+			ArbolGeneral<T> arbol = null;
+			ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica<>();
+			cola.encolar(this);
+			cola.encolar(null);
+			while (!cola.esVacia()) {
+				arbol = cola.desencolar();
+				lista.agregarFinal(arbol.getDato());
+				if (arbol != null) {				
+					ListaGenerica<ArbolGeneral<T>> hijos = arbol.getHijos();
+					hijos.comenzar();
+					while (!hijos.fin()) {
+						ArbolGeneral<T> hijo = hijos.proximo();
+						if (!hijo.esVacio()) {
+							cola.encolar(hijo);
+						}
+					}
+				} else if (!cola.esVacia()){
+					cola.encolar(null);
 				}
-			} else if (!cola.esVacia()){
-				cola.encolar(null);
 			}
 		}
 		return lista;
