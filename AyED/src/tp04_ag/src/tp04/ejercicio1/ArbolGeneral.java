@@ -79,15 +79,15 @@ public class ArbolGeneral<T> {
 		ArbolGeneral<T> arbol;
 		if (hijos.elemento(0) != null) {
 			arbol = hijos.elemento(0);
-			for (int i = 0; i < arbol.preOrden().tamanio(); i++) {
-				lista.agregarFinal(arbol.preOrden().elemento(i));
+			for (int i = 0; i < arbol.inOrden().tamanio(); i++) {
+				lista.agregarFinal(arbol.inOrden().elemento(i));
 			}
 		}
 		lista.agregarFinal(this.getDato());
 		while (!hijos.fin()) {
 			arbol = hijos.proximo();
-			for (int i = 0; i < arbol.preOrden().tamanio(); i++) {
-				lista.agregarFinal(arbol.preOrden().elemento(i));
+			for (int i = 0; i < arbol.inOrden().tamanio(); i++) {
+				lista.agregarFinal(arbol.inOrden().elemento(i));
 			}
 		}
 		return lista;
