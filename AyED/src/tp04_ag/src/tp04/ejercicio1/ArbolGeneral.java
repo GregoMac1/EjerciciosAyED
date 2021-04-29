@@ -159,14 +159,61 @@ public class ArbolGeneral<T> {
 		}
 	}
 	
-	public Integer altura() {
-		// Falta implementar..
-		return 0;
+	public Integer altura() { //creo que bien
+		int nivel = 0;
+		if (!this.esVacio()) {
+			ArbolGeneral<T> arbol = null;
+			ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica<>();
+			cola.encolar(this);
+			cola.encolar(null);
+			while (!cola.esVacia()) {
+				arbol = cola.desencolar();
+				if (arbol != null) {				
+					ListaGenerica<ArbolGeneral<T>> hijos = arbol.getHijos();
+					hijos.comenzar();
+					while (!hijos.fin()) {
+						ArbolGeneral<T> hijo = hijos.proximo();
+						if (!hijo.esVacio()) {
+							cola.encolar(hijo);
+						}
+					}
+				} else if (!cola.esVacia()){
+					cola.encolar(null);
+					nivel++;
+				}
+			}
+		}
+		return nivel;
 	}
 
-	public Integer nivel(T dato) {
-		// falta implementar
-		return -1;
+	public Integer nivel(T dato) { //creo que bien
+		int nivel = 0;
+		if (!this.esVacio()) {
+			ArbolGeneral<T> arbol = null;
+			ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica<>();
+			cola.encolar(this);
+			cola.encolar(null);
+			while (!cola.esVacia()) {
+				arbol = cola.desencolar();
+				if (arbol != null) {				
+					ListaGenerica<ArbolGeneral<T>> hijos = arbol.getHijos();
+					hijos.comenzar();
+					if (arbol.getDato().equals(dato)) {
+						return nivel;
+					}
+					while (!hijos.fin()) {
+						ArbolGeneral<T> hijo = hijos.proximo();
+						if (!hijo.esVacio()) {
+							cola.encolar(hijo);
+						}
+					}
+				} else if (!cola.esVacia()){
+					cola.encolar(null);
+					nivel++;
+				}
+			}
+		}
+		return -1; //no se encontro
 	}
 
 	public Integer ancho() {
