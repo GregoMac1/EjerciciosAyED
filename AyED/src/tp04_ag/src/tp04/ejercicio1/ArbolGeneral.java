@@ -60,25 +60,23 @@ public class ArbolGeneral<T> {
 		return this.dato == null && !this.tieneHijos();
 	}
 
-	public ListaEnlazadaGenerica<T> preOrden(){ //bien
+	public ListaEnlazadaGenerica<T> preOrden(){ //creo que bien
 		ListaEnlazadaGenerica<T> lista = new ListaEnlazadaGenerica<>();  
-		preOrden(lista); 
+		preOrdenRecorrido(lista); 
 	    return lista;
 	}
 	
-	private void preOrden(ListaEnlazadaGenerica<T> lista){
+	private void preOrdenRecorrido(ListaEnlazadaGenerica<T> lista){
 	    ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
 	    lista.agregarFinal(this.getDato());
 	    ArbolGeneral<T> arbol;
-	    if (!hijos.esVacia()) {
-	    	arbol = hijos.elemento(0);
-	    	arbol.preOrden(lista);
-	    }	    
-	    hijos.comenzar();
-	    while (!hijos.fin()) {
-	        arbol = hijos.proximo();
-	        arbol.preOrden(lista);
-	    }	    
+	    if (!hijos.esVacia()) {	    	
+		    hijos.comenzar();
+		    while (!hijos.fin()) {
+		        arbol = hijos.proximo();
+		        arbol.preOrdenRecorrido(lista);
+		    }
+	    }  
 	}
 	
 	public ListaEnlazadaGenerica<T> inOrden(){ //bien
@@ -111,14 +109,12 @@ public class ArbolGeneral<T> {
 	private void postOrdenRecorrido(ListaEnlazadaGenerica<T> lista){
 	    ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
 	    ArbolGeneral<T> arbol;
-	    if (!hijos.esVacia()) {
-	    	arbol = hijos.elemento(0);
-	    	arbol.postOrdenRecorrido(lista);
-	    }	    
-	    hijos.comenzar();
-	    while (!hijos.fin()) {
-	        arbol = hijos.proximo();
-	        arbol.postOrdenRecorrido(lista);
+	    if (!hijos.esVacia()) {	    	
+		    hijos.comenzar();
+		    while (!hijos.fin()) {
+		        arbol = hijos.proximo();
+		        arbol.postOrdenRecorrido(lista);
+		    }
 	    }
 	    lista.agregarFinal(this.getDato());
 	}
@@ -159,34 +155,28 @@ public class ArbolGeneral<T> {
 		}
 	}
 	
-	public Integer altura() { //creo que bien
-		int nivel = 0;
-		if (!this.esVacio()) {
-			ArbolGeneral<T> arbol = null;
-			ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica<>();
-			cola.encolar(this);
-			cola.encolar(null);
-			while (!cola.esVacia()) {
-				arbol = cola.desencolar();
-				if (arbol != null) {				
-					ListaGenerica<ArbolGeneral<T>> hijos = arbol.getHijos();
-					hijos.comenzar();
-					while (!hijos.fin()) {
-						ArbolGeneral<T> hijo = hijos.proximo();
-						if (!hijo.esVacio()) {
-							cola.encolar(hijo);
-						}
-					}
-				} else if (!cola.esVacia()){
-					cola.encolar(null);
-					nivel++;
-				}
-			}
-		}
-		return nivel;
+	public Integer altura() { //bien
+		return alturaRecorrido();
 	}
+	
+	private int alturaRecorrido(){
+	    ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+	    ArbolGeneral<T> arbol;
+	    int max = 0;
+	    if (!hijos.esVacia()) {	    	
+		    hijos.comenzar();
+		    while (!hijos.fin()) {
+		        arbol = hijos.proximo();
+		        int actual = arbol.alturaRecorrido();
+                if (actual > max) {
+                	max = actual;
+                }
+		    }
+	    } 
+	    return max + 1;
+	}	
 
-	public Integer nivel(T dato) { //creo que bien
+	public Integer nivel(T dato) { //bien
 		int nivel = 0;
 		if (!this.esVacio()) {
 			ArbolGeneral<T> arbol = null;
@@ -216,9 +206,36 @@ public class ArbolGeneral<T> {
 		return -1; //no se encontro
 	}
 
-	public Integer ancho() {
-		// Falta implementar..
-		return 0;
+	public Integer ancho() { //bien
+		int max = 0;
+		if (!this.esVacio()) {
+			ArbolGeneral<T> arbol = null;
+			ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica<>();
+			cola.encolar(this);
+			cola.encolar(null);
+			int anchoActual;
+			while (!cola.esVacia()) {
+				arbol = cola.desencolar();
+				anchoActual = 0;
+				if (arbol != null) {				
+					ListaGenerica<ArbolGeneral<T>> hijos = arbol.getHijos();
+					hijos.comenzar();
+					while (!hijos.fin()) {
+						ArbolGeneral<T> hijo = hijos.proximo();
+						if (!hijo.esVacio()) {
+							cola.encolar(hijo);
+						}
+					}
+					anchoActual++;
+				} else if (!cola.esVacia()){
+					cola.encolar(null);
+					if (anchoActual > max) {
+						max = anchoActual;
+					}
+				}
+			}
+		}
+		return max;
 	}
 
 }

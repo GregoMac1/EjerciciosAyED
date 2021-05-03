@@ -96,11 +96,11 @@ public class ArbolBinario<T> {
 			arbol = cola.desencolar();
 			if (arbol != null) {
 				System.out.println(arbol.getDato());
-				if (!arbol.getHijoIzquierdo().esVacio()) {
+				if (arbol.tieneHijoIzquierdo()) {
 					cola.encolar(arbol.getHijoIzquierdo());
 					cantNodos++;
 				}
-				if (!arbol.getHijoDerecho().esVacio()) {
+				if (arbol.tieneHijoDerecho()) {
 					cola.encolar(arbol.getHijoDerecho());
 					cantNodos++;
 				}
