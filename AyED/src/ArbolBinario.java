@@ -1,5 +1,3 @@
-package tp03_ab.tp03.ejercicio1;
-
 import ListasGenericas.src.tp02.ejercicio2.copy.ColaGenerica;
 import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
 import ListasGenericas.src.tp02.ejercicio2.copy.ListaGenerica;
@@ -193,29 +191,26 @@ public class ArbolBinario<T> {
 
 		return l;
 	}
-
 	
-	
-	
-	public int contarHojas() { //bien
-		int cantHojas = 0;
-		if (!this.esVacio()) {			
-			if (!this.tieneHijoDerecho() && !this.tieneHijoIzquierdo()) {
-				cantHojas++;
-			}
+	public int contarHojas() {
+		int hojas = 0;
+		if (!this.esVacio()) {
+			if (!this.tieneHijoIzquierdo() && !this.tieneHijoDerecho()) {
+				hojas++;
+			} 
 			else {
 				if (this.tieneHijoIzquierdo()) {
-					cantHojas += this.getHijoIzquierdo().contarHojas();
+					hojas += this.getHijoIzquierdo().contarHojas();
 				}
 				if (this.tieneHijoDerecho()) {
-					cantHojas += this.getHijoDerecho().contarHojas();
+					hojas += this.getHijoDerecho().contarHojas();
 				}
-			}			
+			}
 		}
-		return cantHojas;
+		return hojas;
 	}
 	
-	public ArbolBinario<T> espejo(){ //bien
+	public ArbolBinario<T> espejo(){
 		ArbolBinario<T> arbolEspejo = new ArbolBinario<>(this.getDato());
 		if (this.tieneHijoIzquierdo()) {
 			arbolEspejo.agregarHijoDerecho(this.getHijoIzquierdo().espejo());
@@ -226,16 +221,16 @@ public class ArbolBinario<T> {
 		return arbolEspejo;
 	}
 	
-	public void entreNiveles(int inf, int sup) { //bien
+	public void entreNiveles(int inf, int sup) {
 		int nivel = 0;
 		ArbolBinario<T> arbol = null;
 		ColaGenerica<ArbolBinario<T>> cola = new ColaGenerica<ArbolBinario<T>>();
 		cola.encolar(this);
 		cola.encolar(null);
-		while (nivel <= sup && !cola.esVacia()) {
+		while (!cola.esVacia() && nivel <= sup) {
 			arbol = cola.desencolar();
 			if (arbol != null) {
-				if (nivel>=inf) {
+				if (nivel >= inf) {
 					System.out.println(arbol.getDato());
 				}
 				if (arbol.tieneHijoIzquierdo()) {
@@ -247,9 +242,10 @@ public class ArbolBinario<T> {
 			}
 			else if (!cola.esVacia()) {
 				System.out.println();
-				cola.encolar(null);
 				nivel++;
+				cola.encolar(null);
 			}
 		}
 	}
+	
 }
