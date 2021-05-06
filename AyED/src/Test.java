@@ -23,5 +23,15 @@ public class Test {
 		while (!lista.fin()) {
 			System.out.println(lista.proximo());
 		}*/
+		/*ListaEnlazadaGenerica<String> lista = new ListaEnlazadaGenerica<String>(); //parcialesViejos1
+		lista.agregarFinal("00");
+		lista.agregarFinal("0");
+		lista.agregarFinal("10");
+		lista.agregarFinal("11");
+		ParcialesViejos parcial = new ParcialesViejos();
+		ListaEnlazadaGenerica<Integer> listaNueva = parcial.codigoZigZag(ab,lista);
+		System.out.println(listaNueva.toString());*/
+		ParcialesViejos parcial = new ParcialesViejos();
+		System.out.println(parcial.resolver_dos(ab));		
 	}
 }
