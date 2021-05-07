@@ -32,6 +32,6 @@ public class Test {
 		ListaEnlazadaGenerica<Integer> listaNueva = parcial.codigoZigZag(ab,lista);
 		System.out.println(listaNueva.toString());*/
 		ParcialesViejos parcial = new ParcialesViejos();
-		System.out.println(parcial.resolver_dos(ab));		
+		System.out.println(parcial.buscarPrimerElementoUltimoNivel());		
 	}
 }

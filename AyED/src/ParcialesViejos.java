@@ -1,6 +1,9 @@
+import ListasGenericas.src.tp02.ejercicio2.copy.ColaGenerica;
 import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
+import ListasGenericas.src.tp02.ejercicio2.copy.PilaGenerica;
 
 public class ParcialesViejos {
+	private ArbolBinario<Integer> arbol;
 	
 	public int cantDescendientes(ArbolBinario<Integer> arbol) {
 		int cant = 0;
@@ -62,6 +65,39 @@ public class ParcialesViejos {
 	public int resolver_dos(ArbolBinario<Integer> arbol) { //bien
 		int suma = camino(arbol,0);
 		return suma;
+	}
+	
+	/*public ParcialesViejos(ArbolBinario<Integer> arbol) {
+		this.arbol = arbol;
+	}*/
+	
+	public Integer buscarPrimerElementoUltimoNivel() { //bien
+		ColaGenerica<ArbolBinario<Integer>> cola = new ColaGenerica<ArbolBinario<Integer>>();
+		PilaGenerica<Integer> pila = new PilaGenerica<Integer>();
+		ArbolBinario<Integer> aux = null;
+		cola.encolar(this.arbol);
+		cola.encolar(null);
+		boolean primerElemento = true;
+		while (!cola.esVacia()) {
+			aux = cola.desencolar();
+			if (aux != null) {
+				if (primerElemento) {
+					pila.apilar(aux.getDato());
+					primerElemento = false;
+				}
+				if (aux.tieneHijoIzquierdo()) {
+					cola.encolar(aux.getHijoIzquierdo());
+				}
+				if (aux.tieneHijoDerecho()) {
+					cola.encolar(aux.getHijoDerecho());
+				}
+			}
+			else if (!cola.esVacia()) {
+				primerElemento = true;
+				cola.encolar(null);
+			}
+		}
+		return pila.tope();
 	}
 	
 	public ListaEnlazadaGenerica<Integer> codigoZigZag(ArbolBinario<Integer> arbol, ListaEnlazadaGenerica<String> codigo){ //bien
