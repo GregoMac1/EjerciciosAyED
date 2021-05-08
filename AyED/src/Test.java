@@ -1,19 +1,28 @@
+import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
+
 //import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
 
 public class Test {
 	public static void main(String[] args) {
-		ArbolBinario<Integer> ab = new ArbolBinario<Integer>(5);
+		ArbolBinario<String> ab = new ArbolBinario<String>("C");
 
-		ArbolBinario<Integer> izq = new ArbolBinario<Integer>(3);
-		izq.agregarHijoIzquierdo(new ArbolBinario<Integer>(2));
-		izq.agregarHijoDerecho(new ArbolBinario<Integer>(4));
+		ArbolBinario<String> izq = new ArbolBinario<String>("A");
+		izq.agregarHijoIzquierdo(new ArbolBinario<String>("L"));
+		izq.agregarHijoDerecho(new ArbolBinario<String>("D"));
 
-		ArbolBinario<Integer> der = new ArbolBinario<Integer>(8);
-		der.agregarHijoIzquierdo(new ArbolBinario<Integer>(7));
-		der.agregarHijoDerecho(new ArbolBinario<Integer>(10));
+		ArbolBinario<String> der = new ArbolBinario<String>("E");
+		der.agregarHijoIzquierdo(new ArbolBinario<String>("S"));
+		der.agregarHijoDerecho(new ArbolBinario<String>("F"));
 
 		ab.agregarHijoIzquierdo(izq);
 		ab.agregarHijoDerecho(der);
+		
+		ListaEnlazadaGenerica<String> lista = new ListaEnlazadaGenerica<String>();
+		lista.agregarFinal("C");
+		lista.agregarFinal("E");
+		lista.agregarFinal("F");
+		Parcial parcial = new Parcial();
+		System.out.println(parcial.resolver(ab, lista));
 		
 		//System.out.println(ab.contarHojas()); //2a
 		//ab.espejo().printPreorden(); //2b
@@ -31,7 +40,8 @@ public class Test {
 		ParcialesViejos parcial = new ParcialesViejos();
 		ListaEnlazadaGenerica<Integer> listaNueva = parcial.codigoZigZag(ab,lista);
 		System.out.println(listaNueva.toString());*/
-		ParcialesViejos parcial = new ParcialesViejos();
-		System.out.println(parcial.buscarPrimerElementoUltimoNivel());		
+		//ParcialesViejos parcial = new ParcialesViejos();
+		//System.out.println(parcial.resolverJuli(ab));
+		//System.out.println(parcial.buscarPrimerElementoUltimoNivel());		
 	}
 }
