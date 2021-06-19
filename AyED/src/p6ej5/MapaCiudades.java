@@ -71,4 +71,55 @@ public class MapaCiudades<T> {
 		}
 		return false;
 	}
+
+	/*public ListaGenerica<String> caminoMasCorto(String ciudad1, String ciudad2){
+		boolean[] marca = new boolean[this.grafo.listaDeVertices().tamanio()+1];
+		ListaGenerica<String> camino;
+		ListaGenerica<String> lista = new ListaEnlazadaGenerica<String>();
+		int max = -1;
+		for (int i = 0; i < this.grafo.listaDeVertices().tamanio(); i++) {
+			if (!marca[i] && this.grafo.listaDeVertices().elemento(i).dato().equals(ciudad1))
+				this.caminoMasCorto(max, ciudad2, i, this.grafo, lista, marca);
+		}
+		return camino;
+	}
+	
+	private boolean caminoMasCorto(int max, String ciudad2, int i, Grafo<String> grafo, ListaGenerica<String> camino, boolean[] marca) {
+		marca[i] = true;
+		Vertice<String> v = grafo.listaDeVertices().elemento(i);
+		ListaGenerica<Arista<String>> ady = grafo.listaDeAdyacentes(v);
+		ady.comenzar();
+		while (!ady.fin()){
+			int j = ady.proximo().getVerticeDestino().getPosicion();
+			if (!marca[j]) {
+				if (v.dato().equals(ciudad2) || this.caminoMasCorto(max, ciudad2, j, grafo, camino, marca)){
+					camino.agregarInicio(v.dato());
+					return true;
+				}
+			}
+		}
+		return false;
+	}	*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
