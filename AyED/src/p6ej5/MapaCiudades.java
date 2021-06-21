@@ -101,7 +101,7 @@ public class MapaCiudades<T> {
 		camino.agregarFinal(actual.dato());
 		if (actual.dato().equals(fin)) { //caso base
 			if (peso < min) {
-				min = peso;
+				min = peso; //corregir. el valor tiene que ser devuelto
 				caminoMin = camino;
 			}
 		} else {
