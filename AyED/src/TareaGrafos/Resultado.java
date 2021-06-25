@@ -1,7 +1,7 @@
 package TareaGrafos;
 
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaGenerica;
+import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.copy.ListaGenerica;
 
 public class Resultado {
 	private int min;
@@ -26,5 +26,10 @@ public class Resultado {
 	
 	public void setMin(int min) {
 		this.min = min;
+	}
+	
+	public void actualizarValor(int min, ListaGenerica<String> caminoMin) {
+		this.min = min;
+		this.caminoMin = caminoMin.clonar();
 	}
 }

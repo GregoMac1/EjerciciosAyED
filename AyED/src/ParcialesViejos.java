@@ -1,6 +1,6 @@
-import ListasGenericas.src.tp02.ejercicio2.copy.ColaGenerica;
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
-import ListasGenericas.src.tp02.ejercicio2.copy.PilaGenerica;
+import ListasGenericas.copy.ColaGenerica;
+import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.copy.PilaGenerica;
 
 public class ParcialesViejos {
 	private ArbolBinario<Integer> arbol;

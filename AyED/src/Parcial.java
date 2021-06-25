@@ -1,4 +1,4 @@
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaGenerica;
+import ListasGenericas.copy.ListaGenerica;
 
 public class Parcial {
 	public boolean resolver(ArbolBinario<String> arbol, ListaGenerica<String> unaLista) {

@@ -1,8 +1,8 @@
-package mutableObjects;
-public class mutableBoolean {
+package MutableObjects;
+public class MutableBoolean {
 	private boolean dato;
 	
-	public mutableBoolean(boolean dato) {
+	public MutableBoolean(boolean dato) {
 		this.dato = dato;
 	}
 	

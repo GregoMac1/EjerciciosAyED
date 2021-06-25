@@ -1,6 +1,6 @@
 package p3ej2;
 
-import tp03_ab.tp03.ejercicio1.ArbolBinario;
+import ArbolBinario.ArbolBinario;
 
 public class C {
 	public static void main(String[] args) {

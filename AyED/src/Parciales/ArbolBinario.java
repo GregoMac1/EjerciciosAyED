@@ -1,7 +1,7 @@
 package Parciales;
-import ListasGenericas.src.tp02.ejercicio2.copy.ColaGenerica;
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaGenerica;
+import ListasGenericas.copy.ColaGenerica;
+import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.copy.ListaGenerica;
 
 public class ArbolBinario<T> {
 	private T dato;

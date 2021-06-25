@@ -1,4 +1,4 @@
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaGenerica;
+import ListasGenericas.copy.ListaGenerica;
 
 public class ParcialDos {
 	public class Estado {

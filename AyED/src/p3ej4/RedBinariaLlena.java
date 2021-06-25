@@ -1,6 +1,6 @@
 package p3ej4;
 
-import tp03_ab.tp03.ejercicio1.ArbolBinario;
+import ArbolBinario.ArbolBinario;
 
 public class RedBinariaLlena {
 	ArbolBinario<Integer> arbol;

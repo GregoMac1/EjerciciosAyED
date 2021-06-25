@@ -1,11 +1,11 @@
 package p6ej6;
 
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaGenerica;
-import mutableObjects.mutableBoolean;
-import tp06.ejercicio3.Arista;
-import tp06.ejercicio3.Grafo;
-import tp06.ejercicio3.Vertice;
+import Grafos.Arista;
+import Grafos.Grafo;
+import Grafos.Vertice;
+import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.copy.ListaGenerica;
+import MutableObjects.MutableBoolean;
 
 public class VisitaOslo {
 	
@@ -13,7 +13,7 @@ public class VisitaOslo {
 			int maxTiempo, ListaEnlazadaGenerica<String> lugaresRestringidos) { //consultar si esta bien
 		ListaGenerica<String> caminoOk = new ListaEnlazadaGenerica<String>();
 		ListaGenerica<String> camino = new ListaEnlazadaGenerica<String>();
-		mutableBoolean encontre = new mutableBoolean(false);		
+		MutableBoolean encontre = new MutableBoolean(false);		
 		ListaGenerica<Vertice<String>> vertices = lugares.listaDeVertices();
 		boolean[] marca = new boolean [vertices.tamanio()];
 		Vertice<String> ini = null, fin = null;
@@ -32,7 +32,7 @@ public class VisitaOslo {
 	
 	private void paseoEnBici(Grafo<String> lugares, int i, String destino, 
 			int tiempo, int maxTiempo, ListaGenerica<String> camino, 
-			ListaGenerica<String> caminoOk, mutableBoolean encontre, boolean[] marca, 
+			ListaGenerica<String> caminoOk, MutableBoolean encontre, boolean[] marca, 
 			ListaEnlazadaGenerica<String> lugaresRestringidos) {
 		marca[i] = true;
 		Vertice<String> actual = lugares.vetice(i);

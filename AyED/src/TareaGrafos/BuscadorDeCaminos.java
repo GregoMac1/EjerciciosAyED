@@ -1,10 +1,10 @@
 package TareaGrafos;
 
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaGenerica;
-import tp06.ejercicio3.Arista;
-import tp06.ejercicio3.Grafo;
-import tp06.ejercicio3.Vertice;
+import Grafos.Arista;
+import Grafos.Grafo;
+import Grafos.Vertice;
+import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.copy.ListaGenerica;
 
 public class BuscadorDeCaminos { //bien. corregido
 	private Grafo<String> grafo;
@@ -40,8 +40,7 @@ public class BuscadorDeCaminos { //bien. corregido
 		camino.agregarFinal(actual.dato());
 		if (actual.equals(fin)) {
 			if (peso < res.getMin()) {
-				res.setMin(peso);
-				res.setCaminoMin(camino);
+				res.actualizarValor(peso, camino);
 			}
 		} else {
 			ListaGenerica<Arista<String>> ady = grafo.listaDeAdyacentes(actual);
@@ -57,14 +56,4 @@ public class BuscadorDeCaminos { //bien. corregido
 		marca[actual.getPosicion()] = false;
 		camino.eliminarEn(camino.tamanio());
 	}
-
-	/*private void copiarLista(ListaGenerica<String> origen, ListaGenerica<String> destino) {        
-        while (!destino.esVacia()) {
-        	destino.eliminarEn(1);
-        }        
-        origen.comenzar();
-        while (!origen.fin()) {
-            destino.agregarFinal(origen.proximo());
-        }
-	}*/
 }

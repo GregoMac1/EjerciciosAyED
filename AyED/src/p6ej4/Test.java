@@ -1,9 +1,9 @@
 package p6ej4;
 
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
-import tp06.ejercicio3.GrafoImplListAdy;
-import tp06.ejercicio3.Vertice;
-import tp06.ejercicio3.VerticeImplListAdy;
+import Grafos.GrafoImplListAdy;
+import Grafos.Vertice;
+import Grafos.VerticeImplListAdy;
+import ListasGenericas.copy.ListaEnlazadaGenerica;
 
 public class Test {
 	public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package p3ej5;
 
-import ListasGenericas.src.tp02.ejercicio2.copy.ColaGenerica;
-import tp03_ab.tp03.ejercicio1.ArbolBinario;
+import ArbolBinario.ArbolBinario;
+import ListasGenericas.copy.ColaGenerica;
 
 public class ProfundidadArbolBinario {
 	ArbolBinario<Integer> arbol;

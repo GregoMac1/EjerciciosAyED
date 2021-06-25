@@ -1,8 +1,8 @@
-package mutableObjects;
-public class mutableInteger {
+package MutableObjects;
+public class MutableInteger {
 	private int dato;
 	
-	public mutableInteger(int dato) {
+	public MutableInteger(int dato) {
 		this.dato = dato;
 	}
 	

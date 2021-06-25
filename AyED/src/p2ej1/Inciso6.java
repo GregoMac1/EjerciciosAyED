@@ -2,7 +2,7 @@ package p2ej1;
 
 import java.util.Scanner;
 
-import ListasDeEnteros.src.tp02.ejercicio1.copy.ListaDeEnterosEnlazada;
+import ListasDeEnteros.copy.ListaDeEnterosEnlazada;
 
 public class Inciso6 { //bien
 	

@@ -1,11 +1,11 @@
 package p6ej4;
 
-import ListasGenericas.src.tp02.ejercicio2.copy.ColaGenerica;
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
-import ListasGenericas.src.tp02.ejercicio2.copy.ListaGenerica;
-import tp06.ejercicio3.Arista;
-import tp06.ejercicio3.Grafo;
-import tp06.ejercicio3.Vertice;
+import Grafos.Arista;
+import Grafos.Grafo;
+import Grafos.Vertice;
+import ListasGenericas.copy.ColaGenerica;
+import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.copy.ListaGenerica;
 
 public class Recorridos<T> {
 	
