@@ -1,5 +1,5 @@
 package Parciales;
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ListaGenerica;
 
 public class ParcialDos {
 	public class Estado {

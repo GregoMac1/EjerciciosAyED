@@ -2,7 +2,7 @@ package p2ej1; //bien
 
 import java.util.Scanner;
 
-import ListasDeEnteros.copy.ListaDeEnterosConArreglos;
+import ListasDeEnteros.ListaDeEnterosConArreglos;
 
 public class TestListaDeEnterosConArreglos {
 

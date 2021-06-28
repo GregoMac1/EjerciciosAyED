@@ -1,5 +1,5 @@
 package Parciales;
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ListaGenerica;
 
 public class Parcial {
 	public boolean resolver(ArbolBinario<String> arbol, ListaGenerica<String> unaLista) {

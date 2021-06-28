@@ -1,6 +1,6 @@
 package Grafos;
 
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ListaGenerica;
 
 
 /**

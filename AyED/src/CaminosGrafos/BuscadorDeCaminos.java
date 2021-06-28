@@ -3,8 +3,8 @@ package CaminosGrafos;
 import Grafos.Arista;
 import Grafos.Grafo;
 import Grafos.Vertice;
-import ListasGenericas.copy.ListaEnlazadaGenerica;
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
+import ListasGenericas.ListaGenerica;
 
 public class BuscadorDeCaminos<T> {
 	private Grafo<T> grafo;

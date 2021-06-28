@@ -2,7 +2,7 @@ package CaminosGrafos;
 
 import Grafos.GrafoImplListAdy;
 import Grafos.VerticeImplListAdy;
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ListaGenerica;
 
 public class Test { //bien. funciona y esta corregido
 	public static void main(String[] args) {

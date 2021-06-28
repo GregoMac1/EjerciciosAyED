@@ -1,7 +1,7 @@
 package p3ej3;
 
 import ArbolBinario.ArbolBinario;
-import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
 
 public class ContadorArbol {
 	private ArbolBinario<Integer> arbol;

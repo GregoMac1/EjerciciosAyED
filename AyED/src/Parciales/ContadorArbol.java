@@ -1,5 +1,5 @@
 package Parciales;
-import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
 
 public class ContadorArbol {
 	private ArbolBinario<Integer> arbol;

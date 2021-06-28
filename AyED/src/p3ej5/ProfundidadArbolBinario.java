@@ -1,7 +1,7 @@
 package p3ej5;
 
 import ArbolBinario.ArbolBinario;
-import ListasGenericas.copy.ColaGenerica;
+import ListasGenericas.ColaGenerica;
 
 public class ProfundidadArbolBinario {
 	ArbolBinario<Integer> arbol;

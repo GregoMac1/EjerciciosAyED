@@ -1,4 +1,4 @@
-package ListasGenericas.copy;
+package ListasGenericas;
 
 public class PilaGenerica<T> {
 	private ListaGenerica<T> pila;

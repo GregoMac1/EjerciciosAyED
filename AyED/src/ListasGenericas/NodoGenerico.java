@@ -1,4 +1,4 @@
-package ListasGenericas.copy;
+package ListasGenericas;
 /**
  * Esta clase representa un nodo de la lista enlazada.
  * */

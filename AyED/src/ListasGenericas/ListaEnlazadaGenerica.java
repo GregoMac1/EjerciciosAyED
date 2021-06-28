@@ -1,4 +1,4 @@
-package tp03_ab.tp02.ejercicio2;
+package ListasGenericas;
 /**
  * La clase ListaGenericaEnlazada es una ListaGenerica, donde los elementos de
  * la lista (nodos) referencian al siguiente elemento (nodo), por este motivo,
@@ -177,11 +177,6 @@ public class ListaEnlazadaGenerica<T> extends ListaGenerica<T> {
 	}
 
 	@Override
-	public int tamanio() {
-		return this.tamanio;
-	}
-
-	@Override
 	public boolean esVacia() {
 		return this.tamanio() == 0;
 	}
@@ -209,16 +204,15 @@ public class ListaEnlazadaGenerica<T> extends ListaGenerica<T> {
 		return nueva;
 	}
 	
-	public boolean equals(Object o) {
-		if (this==o)
-			return true;
-		ListaEnlazadaGenerica<T> lista = (ListaEnlazadaGenerica<T>) o;
-		for (int i=1; i<= lista.tamanio(); i++) {
-			if (!lista.elemento(i).equals(this.elemento(i)))
-				return false;
+	public void agregarArreglo (T[] arreglo) {
+		for (int i = 0; i < arreglo.length; i++) {
+			this.agregarFinal(arreglo[i]);
 		}
-		return true;
-		
+	}
+
+	@Override
+	public int tamanio() {		
+		return this.tamanio;
 	}
 
 }

@@ -1,7 +1,7 @@
 package Grafos;
 
-import ListasGenericas.copy.ListaEnlazadaGenerica;
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
+import ListasGenericas.ListaGenerica;
 
 public class VerticeImplListAdy<T>
     implements Vertice<T> {

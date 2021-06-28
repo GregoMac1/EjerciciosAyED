@@ -3,7 +3,7 @@ package p6ej4;
 import Grafos.GrafoImplListAdy;
 import Grafos.Vertice;
 import Grafos.VerticeImplListAdy;
-import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
 
 public class Test {
 	public static void main(String[] args) {

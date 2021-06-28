@@ -1,4 +1,4 @@
-package ListasGenericas.copy;
+package ListasGenericas;
 
 public class ColaGenerica<T> {
 	private ListaEnlazadaGenerica<T> cola;

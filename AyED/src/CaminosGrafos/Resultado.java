@@ -1,6 +1,6 @@
 package CaminosGrafos;
 
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ListaGenerica;
 
 public class Resultado<T> {
 	private int min;

@@ -1,4 +1,4 @@
-package ListasDeEnteros.copy;
+package ListasDeEnteros;
 
 public class ListaDeEnterosConArreglos extends ListaDeEnteros {
 	private int tamanio;

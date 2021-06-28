@@ -1,8 +1,8 @@
 package ArbolGeneral;
 
-import ListasGenericas.copy.ColaGenerica;
-import ListasGenericas.copy.ListaEnlazadaGenerica;
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ColaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
+import ListasGenericas.ListaGenerica;
 
 public class ArbolGeneral<T> {
 

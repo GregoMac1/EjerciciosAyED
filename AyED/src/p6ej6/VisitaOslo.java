@@ -3,8 +3,8 @@ package p6ej6;
 import Grafos.Arista;
 import Grafos.Grafo;
 import Grafos.Vertice;
-import ListasGenericas.copy.ListaEnlazadaGenerica;
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
+import ListasGenericas.ListaGenerica;
 import MutableObjects.MutableBoolean;
 
 public class VisitaOslo {

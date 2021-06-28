@@ -2,8 +2,8 @@ package p2ej1;
 
 import java.util.Scanner;
 
-import ListasDeEnteros.copy.ListaDeEnterosEnlazada;
-import ListasDeEnteros.copy.NodoEntero;
+import ListasDeEnteros.ListaDeEnterosEnlazada;
+import ListasDeEnteros.NodoEntero;
 
 public class Inciso5 { //creo que bien
 	

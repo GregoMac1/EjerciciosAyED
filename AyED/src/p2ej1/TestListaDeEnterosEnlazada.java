@@ -2,7 +2,7 @@ package p2ej1; // bien
 
 import java.util.Scanner;
 
-import ListasDeEnteros.copy.ListaDeEnterosEnlazada;
+import ListasDeEnteros.ListaDeEnterosEnlazada;
 
 public class TestListaDeEnterosEnlazada {
 

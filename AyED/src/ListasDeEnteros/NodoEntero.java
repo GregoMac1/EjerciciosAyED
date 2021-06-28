@@ -1,4 +1,4 @@
-package ListasDeEnteros.copy;
+package ListasDeEnteros;
 
 public class NodoEntero {
 	private Integer dato;

@@ -1,7 +1,7 @@
 package Parciales;
-import ListasGenericas.copy.ColaGenerica;
-import ListasGenericas.copy.ListaEnlazadaGenerica;
-import ListasGenericas.copy.PilaGenerica;
+import ListasGenericas.ColaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
+import ListasGenericas.PilaGenerica;
 
 public class ParcialesViejos {
 	private ArbolBinario<Integer> arbol;

@@ -4,8 +4,8 @@ import Grafos.Arista;
 import Grafos.Grafo;
 import Grafos.GrafoImplListAdy;
 import Grafos.Vertice;
-import ListasGenericas.copy.ListaEnlazadaGenerica;
-import ListasGenericas.copy.ListaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
+import ListasGenericas.ListaGenerica;
 
 public class MapaCiudades<T> {
 	private GrafoImplListAdy<String> grafo;

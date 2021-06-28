@@ -1,6 +1,6 @@
 package ArbolBinario;
 
-import ListasGenericas.copy.PilaGenerica;
+import ListasGenericas.PilaGenerica;
 
 public class ArbolDeExpresion {
 	public void printPreorden(ArbolBinario<Character> arbol) {

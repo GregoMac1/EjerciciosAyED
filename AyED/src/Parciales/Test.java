@@ -1,5 +1,5 @@
 package Parciales;
-import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
 
 //import ListasGenericas.src.tp02.ejercicio2.copy.ListaEnlazadaGenerica;
 

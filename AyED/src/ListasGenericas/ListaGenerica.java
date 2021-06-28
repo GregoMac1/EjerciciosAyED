@@ -1,4 +1,4 @@
-package ListasGenericas.src.tp02.ejercicio2.copy;
+package ListasGenericas;
 
 /**
  * ListaDeEnteros es una clase abstracta que define los métodos que deberán

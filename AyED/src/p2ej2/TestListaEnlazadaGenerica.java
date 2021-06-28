@@ -2,7 +2,7 @@ package p2ej2;
 
 import java.util.Scanner;
 
-import ListasGenericas.copy.ListaEnlazadaGenerica;
+import ListasGenericas.ListaEnlazadaGenerica;
 
 public class TestListaEnlazadaGenerica { //bien
 

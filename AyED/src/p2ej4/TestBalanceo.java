@@ -1,6 +1,6 @@
 package p2ej4;
 
-import ListasGenericas.copy.PilaGenerica;
+import ListasGenericas.PilaGenerica;
 
 public class TestBalanceo {// esta encaminado, pero falta corregir si el string tiene mas de apertura que de cierre, y falta verificar que la pila no este vacia antes de preguntar el tope
 	
