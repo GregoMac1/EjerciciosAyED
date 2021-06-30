@@ -39,9 +39,8 @@ public class BuscadorDeCaminos { //bien. corregido
 		marca[actual.getPosicion()] = true;
 		camino.agregarFinal(actual.dato());
 		if (actual.equals(fin)) {
-			if (peso < res.getMin()) {
+			if (peso < res.getMin())
 				res.actualizarValor(peso, camino);
-			}
 		} else {
 			ListaGenerica<Arista<String>> ady = grafo.listaDeAdyacentes(actual);
 			ady.comenzar();
