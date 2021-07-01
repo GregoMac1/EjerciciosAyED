@@ -6,7 +6,7 @@ public class Resultado {
 	private int min;
 	private ListaGenerica<String> caminoMin;
 	private ListaGenerica<String> caminoCumple;
-	
+
 	public ListaGenerica<String> getCaminoMin() {
 		return caminoMin;
 	}
