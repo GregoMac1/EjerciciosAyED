@@ -4,6 +4,7 @@ import ListasGenericas.ListaGenerica;
 
 public class Resultado {
 	private int min;
+	private int max;
 	private ListaGenerica<String> caminoMin;
 	private ListaGenerica<String> caminoCumple;
 
@@ -34,5 +35,13 @@ public class Resultado {
 
 	public void setCaminoCumple(ListaGenerica<String> caminoCumple) {
 		this.caminoCumple = caminoCumple.clonar();
+	}
+
+	public int getMax() {
+		return max;
+	}
+
+	public void setMax(int max) {
+		this.max = max;
 	}	
 }

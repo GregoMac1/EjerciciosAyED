@@ -28,7 +28,7 @@ public class Resultado<T> {
 	}
 	
 	public void setTodosLosCaminos(ListaGenerica<ListaGenerica<T>> todosLosCaminos) {
-		this.todosLosCaminos = todosLosCaminos;
+		this.todosLosCaminos = todosLosCaminos.clonar();
 	}
 	
 	public void agregarCamino(ListaGenerica<T> camino) {
